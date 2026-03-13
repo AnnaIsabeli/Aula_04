@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+    <title>Cadastro de Aluno</title>
+    </head>
+
+    <body>
+        <h1>Cadastro de Aluno</h1>
+
+        <form th:action="@{/alunos/salvar}" th:object="${aluno}" method="post">
+            <!-- id escondido para edição -->
+            <input type="hidden" th:field="*{id}">
+            <label>Nome:</label>
+            <input type="text" th:field="*{nome}"><br>
+
+            <label>Email:</label>
+            <input type="text" th:field="*{email}"><br>
+
+            <label>Curso:</label>
+            <input type="text" th:field="*{curso}"><br>
+
+            <button type="submit">Salvar</button>
+        </form><br>
+
+        <a href="/alunos">Voltar</a>
+    </body>
+</html>
